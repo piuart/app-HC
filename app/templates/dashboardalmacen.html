@@ -1,0 +1,147 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block head %}
+    <script src="{% static 'lib/highcharts-8.1.2/highcharts.js' %}"></script>
+    <script src="{% static 'lib/highcharts-8.1.2/modules/exporting.js' %}"></script>
+    <script src="{% static 'lib/highcharts-8.1.2/modules/export-data.js' %}"></script>
+    <script src="{% static 'lib/highcharts-8.1.2/modules/accessibility.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-7">
+                <div id="container"></div>
+            </div>
+            <br/>
+            <div class="col-lg-5">
+                <div id="container-pie"></div>
+            </div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        var graphcolumn = Highcharts.chart('container', {
+            chart: {
+                type: 'column',
+                {#inverted: true,#}
+            },
+            title: {
+                text: ''
+            },
+            subtitle: {
+                text: ''
+            },
+            exporting: {
+                enabled: false
+            },
+            accessibility: {
+                announceNewData: {
+                    enabled: true
+                }
+            },
+            xAxis: {
+                type: 'category'
+            },
+            yAxis: {
+                title: {
+                    text: 'Productos'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            plotOptions: {
+                series: {
+                    borderWidth: 0,
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.y:.0f} Unidades'
+                    }
+                }
+            },
+            tooltip: {
+                pointFormat: 'Stock: <b>{point.y:.0f} Unidades</b>'
+            },
+        });
+
+        var graphpie = Highcharts.chart('container-pie', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: '% venta de productos por el mes {{ mes}} del año {{ anio }}'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            accessibility: {
+                point: {
+                    valueSuffix: '%'
+                }
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                    }
+                }
+            },
+        });
+
+        function get_graph_sales_year_month() {
+            $.ajax({
+                url: window.location.pathname, //window.location.pathname
+                type: 'POST',
+                data: {
+                    'action': 'get_graph_sales_year_month'
+                },
+                dataType: 'json',
+            }).done(function (data) {
+                if (!data.hasOwnProperty('error')) {
+                    graphcolumn.addSeries(data);
+                    return false;
+                }
+                message_error(data.error);
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                alert(textStatus + ': ' + errorThrown);
+            }).always(function (data) {
+
+            });
+        }
+
+        function get_graph_sales_products_year_month() {
+            $.ajax({
+                url: window.location.pathname, //window.location.pathname
+                type: 'POST',
+                data: {
+                    'action': 'get_graph_sales_products_year_month'
+                },
+                dataType: 'json',
+            }).done(function (data) {
+                if (!data.hasOwnProperty('error')) {
+                    graphpie.addSeries(data);
+                    return false;
+                }
+                message_error(data.error);
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                alert(textStatus + ': ' + errorThrown);
+            }).always(function (data) {
+
+            });
+        }
+
+        $(function () {
+
+            get_graph_sales_year_month();
+
+            get_graph_sales_products_year_month();
+
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'list.html' %}
+{% load static %}
+
+{% block head_list %}
+    <script src="{% static 'listareproduccion/js/list.js' %}"></script>
+{% endblock %}
+
+{% block columns %}
+    <tr>
+        <th scope="col" style="width:10%">Nro</th>
+        <th scope="col" style="width:20%">Nombre</th>
+        <th scope="col">IdVideo</th>
+        <th scope="col">Fecha Ejecución</th>
+        <th scope="col">Hora Ejecución</th>
+        <th scope="col">Opciones</th>
+    </tr>
+{% endblock %}
+
+{% block rows %}
+
+{% endblock %}
+
+{% block javascript %}
+
+{% endblock %}

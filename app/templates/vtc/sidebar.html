@@ -1,0 +1,62 @@
+{% load static %}
+<aside class="main-sidebar sidebar-dark-primary elevation-1">
+
+    <a href="/" class="brand-link">
+        <img src="{% static 'img/logo2.png' %}"
+             alt=""
+        <span class=""></span>
+    </a>
+    <div class="sidebar">
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ request.user.get_image }}" class="img-circle elevation-0" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block"><strong>{{ user }}</strong></a>
+            </div>
+        </div>
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-header"><strong>Admiistración de:</strong></li>
+                <li class="nav-item">
+                    <a href="{% url 'youtube' %}" class="nav-link">
+                        <i class="fab fa-youtube"></i> MupiApp
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'erp:category_list' %}" class="nav-link">
+                        <i class="fas fa-exclamation-circle"></i> Categorias
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'erp:product_list' %}" class="nav-link">
+                        <i class="fas fa-archive"></i> Productos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'erp:client_list' %}" class="nav-link">
+                        <i class="fas fa-user-circle"></i> Clientes
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'erp:sale_list' %}" class="nav-link">
+                        <i class="fas fa-calendar"></i> Ventas / Gráficas
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'user:user_list' %}" class="nav-link">
+                        <i class="fas fa-power-off"></i> Usuarios
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'erp:listareproduccion_list' %}" class="nav-link">
+                        <i class="fas fa-list-alt"></i> Lista Reproducción
+                    </a>
+                </li>
+                <li class="nav-item">
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+

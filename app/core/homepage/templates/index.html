@@ -1,0 +1,711 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>PixelApp</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{% static 'img/favicon.png' %}" rel="icon">
+    <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/venobox/venobox.css' %}" rel="stylesheet">
+    {#    <link href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}assets/" rel="stylesheet">#}
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header">
+    <div class="d-flex flex-column">
+
+        <div class="profile">
+            <img src="{% static 'img/profile-img.jpg' %}" alt="" class="img-fluid rounded-circle">
+            <h1 class="text-light"><a href="/">PixelApp</a></h1>
+            <div class="social-links mt-3 text-center">
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li class="#hero"><a href=""><i class=""></i><span>Inicio</span></a></li>
+                <li><a href="#about"><i class=""></i> <span>Sobre nosotros</span></a></li>
+                <li><a href="#resume"><i class=""></i> <span>Proyecto ErpTokio</span></a></li>
+                <li><a href="#portfolio"><i class=""></i> Codigo</a></li>
+                <li>{% if request.user.is_authenticated %}
+                    <a href="{% url 'erp:dashboard' %}">
+                        <i class="bx bx-user"></i> Bienvenido {{ request.user.username }}
+                    </a>
+                {% else %}
+                    <a href="{% url 'login' %}">
+                        <i class="bx bx-door-open"></i> Login
+                    </a>
+                {% endif %}</li>
+                
+
+
+            </ul>
+        </nav><!-- .nav-menu -->
+        <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+    </div>
+</header><!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+        <h1>Digitaliza tu empresa</h1>
+        <p>Software - <span class="typed" data-typed-items=" Potente, Sencillo, en la nube"></span></p>
+    </div>
+</section><!-- End Hero -->
+
+<main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Administra tu negocio de forma intuitiva</h2>
+                <p>Ofrecemos lo último en tecnología de gestión empresarial en una sola plataforma. Crea perfiles de
+                    usuarios,darle permisos en los grupos para efectuar diversas tareas.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4" data-aos="fade-right">
+                    <img src="{% static 'img/profile-img.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+                    <h3>Soporte</h3>
+                    <p class="font-italic">
+                        Estamos para ayudarte y asesorarte para cualquier duda. Nuestro equipo estará encantado de
+                        atenderte. Ahorra tiempo y aumenta la productividad
+                    </p>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul>
+                                <li><i class="icofont-rounded-right"></i> <strong>Stock:</strong> control de ventas y
+                                    pedidos
+                                </li>
+                                <li><i class="icofont-rounded-right"></i> <strong>Administrador de clientes:</strong>
+                                    Listado rapido de contactos
+                                </li>
+                                <li><i class="icofont-rounded-right"></i> <strong>Almacén:</strong> Gráficas y acseso
+                                    rápido a la data
+                                </li>
+                                <li><i class="icofont-rounded-right"></i> <strong>Gestor de productos:</strong> Listado
+                                    a tiempo real
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul>
+                                <li><i class="icofont-rounded-right"></i> <strong>Chat</strong> comunicación activa</li>
+                                <li><i class="icofont-rounded-right"></i> <strong>Generador de facturas:</strong>
+                                    Resumen de reportes
+                                </li>
+                                <li><i class="icofont-rounded-right"></i> <strong>Cotrol del IVA:</strong> según pais, o
+                                    producto
+                                </li>
+                                <li><i class="icofont-rounded-right"></i> <strong>Relacion Cliente:</strong> Resumen
+                                    general de sus compras
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p>
+                        Obten un resumen diario de tus actividades a simple vista y a tiempo real
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Facts Section ======= -->
+    <section id="facts" class="facts">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Gestiona los recursos humanos</h2>
+                <p>Crea y almacena los datos encenciales de tus trabajadores de cada area, clave, correo y nombre de
+                    usuario</p>
+            </div>
+
+            <div class="row no-gutters">
+
+                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
+                    <div class="count-box">
+                        <i class="icofont-simple-smile"></i>
+                        <span data-toggle="counter-up">3000</span>
+                        <p><strong>Clientes</strong> felices</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="count-box">
+                        <i class="icofont-document-folder"></i>
+                        <span data-toggle="counter-up">150</span>
+                        <p><strong>Modulos</strong> a medida</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
+                    <div class="count-box">
+                        <i class="icofont-live-support"></i>
+                        <span data-toggle="counter-up">100</span>
+                        <p><strong>%</strong> Garantizado</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
+                    <div class="count-box">
+                        <i class="icofont-users-alt-5"></i>
+                        <span data-toggle="counter-up">100</span>
+                        <p><strong>%</strong> Facil de usar</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Facts Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills section-bg">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Ventajas</h2>
+                <p>Trabaje bajo un mismo mapa de ruta automatizando una gran cantidad de procesos que hará a su equipo
+                    más eficiente. Unifique en una plataforma la información de sus proveedores, distribuidores y/o
+                    clientes, de manera que pueda fijar plazos y prioridades de manera anticipada.</p>
+            </div>
+
+            <div class="row skills-content">
+
+                <div class="col-lg-6" data-aos="fade-up">
+
+                    <div class="progress">
+                        <span class="skill">Rentabilidad <i class="val">100%</i></span>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                                 aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress">
+                        <span class="skill">Escalable <i class="val">90%</i></span>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+                                 aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress">
+                        <span class="skill">Ayuda en toma de decisiones <i class="val">75%</i></span>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                                 aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="progress">
+                        <span class="skill">100% Python <i class="val">80%</i></span>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                                 aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress">
+                        <span class="skill">Soporte <i class="val">90%</i></span>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+                                 aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress">
+                        <span class="skill">Diseño dinámico<i class="val">90%</i></span>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0"
+                                 aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Resume</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+                    fugiat sit in iste officiis commodi quidem hic quas.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-up">
+                    <h3 class="resume-title">Sumary</h3>
+                    <div class="resume-item pb-0">
+                        <h4>Alex Smith</h4>
+                        <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and
+                            developing user-centered digital/print marketing material from initial concept to final,
+                            polished deliverable.</em></p>
+                        <ul>
+                            <li>Portland par 127,Orlando, FL</li>
+                            <li>(123) 456-7891</li>
+                            <li>alice.barkley@example.com</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="resume-title">Education</h3>
+                    <div class="resume-item">
+                        <h4>Master of Fine Arts &amp; Graphic Design</h4>
+                        <h5>2015 - 2016</h5>
+                        <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
+                        <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero
+                            voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
+                    </div>
+                    <div class="resume-item">
+                        <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
+                        <h5>2010 - 2014</h5>
+                        <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
+                        <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel
+                            ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur
+                            neque etlon sader mart dila</p>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="resume-title">Professional Experience</h3>
+                    <div class="resume-item">
+                        <h4>Senior graphic design specialist</h4>
+                        <h5>2019 - Present</h5>
+                        <p><em>Experion, New York, NY </em></p>
+                        <ul>
+                            <li>Lead in the design, development, and implementation of the graphic, layout, and
+                                production communication materials
+                            </li>
+                            <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of
+                                the project.
+                            </li>
+                            <li>Supervise the assessment of all graphic materials in order to ensure quality and
+                                accuracy of the design
+                            </li>
+                            <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="resume-item">
+                        <h4>Graphic design specialist</h4>
+                        <h5>2017 - 2018</h5>
+                        <p><em>Stepping Stone Advertising, New York, NY</em></p>
+                        <ul>
+                            <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and
+                                advertisements).
+                            </li>
+                            <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
+                            <li>Recommended and consulted with clients on the most appropriate graphic design</li>
+                            <li>Created 4+ design presentations and proposals a month for clients and account managers
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End Resume Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Portfolio</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+                    fugiat sit in iste officiis commodi quidem hic quas.</p>
+            </div>
+
+            <div class="row" data-aos="fade-up">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <ul id="portfolio-flters">
+                        <li data-filter="*" class="filter-active">All</li>
+                        <li data-filter=".filter-app">App</li>
+                        <li data-filter=".filter-card">Card</li>
+                        <li data-filter=".filter-web">Web</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <div class="portfolio-wrap">
+                        <img src="{% static 'img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt="">
+                        <div class="portfolio-links">
+                            <a href="{% static 'img/portfolio/portfolio-1.jpg' %}" data-gall="portfolioGallery"
+                               class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                    <div class="portfolio-wrap">
+                        <img src="{% static 'img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt="">
+                        <div class="portfolio-links">
+                            <a href="{% static 'img/portfolio/portfolio-2.jpg' %}" data-gall="portfolioGallery"
+                               class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <div class="portfolio-wrap">
+                        <img src="{% static 'img/portfolio/portfolio-3.jpg' %}" class="img-fluid" alt="">
+                        <div class="portfolio-links">
+                            <a href="{% static 'img/portfolio/portfolio-3.jpg' %}" data-gall="portfolioGallery"
+                               class="venobox" title="App 2"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                    <div class="portfolio-wrap">
+                        <img src="{% static 'img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
+                        <div class="portfolio-links">
+                            <a href="{% static 'img/portfolio/portfolio-4.jpg' %}" data-gall="portfolioGallery"
+                               class="venobox" title="Card 2"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                    <div class="portfolio-wrap">
+                        <img src="{% static 'img/portfolio/portfolio-5.jpg' %}" class="img-fluid" alt="">
+                        <div class="portfolio-links">
+                            <a href="{% static 'img/portfolio/portfolio-5.jpg' %}" data-gall="portfolioGallery"
+                               class="venobox" title="Web 2"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <div class="portfolio-wrap">
+                        <img src="{% static 'img/portfolio/portfolio-6.jpg' %}" class="img-fluid" alt="">
+                        <div class="portfolio-links">
+                            <a href="{% static 'img/portfolio/portfolio-6.jpg' %}" data-gall="portfolioGallery"
+                               class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                    <div class="portfolio-wrap">
+                        <img src="{% static 'img/portfolio/portfolio-7.jpg' %}" class="img-fluid" alt="">
+                        <div class="portfolio-links">
+                            <a href="{% static 'img/portfolio/portfolio-7.jpg' %}" data-gall="portfolioGallery"
+                               class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                    <div class="portfolio-wrap">
+                        <img src="{% static 'img/portfolio/portfolio-8.jpg' %}" class="img-fluid" alt="">
+                        <div class="portfolio-links">
+                            <a href="{% static 'img/portfolio/portfolio-8.jpg' %}" data-gall="portfolioGallery"
+                               class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                    <div class="portfolio-wrap">
+                        <img src="{% static 'img/portfolio/portfolio-9.jpg' %}" class="img-fluid" alt="">
+                        <div class="portfolio-links">
+                            <a href="{% static 'img/portfolio/portfolio-9.jpg' %}" data-gall="portfolioGallery"
+                               class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Services</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+                    fugiat sit in iste officiis commodi quidem hic quas.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+                    <div class="icon"><i class="icofont-computer"></i></div>
+                    <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi
+                        sint occaecati cupiditate non provident</p>
+                </div>
+                <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
+                    <h4 class="title"><a href="">Dolor Sitema</a></h4>
+                    <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat tarad limino ata</p>
+                </div>
+                <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon"><i class="icofont-earth"></i></div>
+                    <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+                    <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                        eu fugiat nulla pariatur</p>
+                </div>
+                <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon"><i class="icofont-image"></i></div>
+                    <h4 class="title"><a href="">Magni Dolores</a></h4>
+                    <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum</p>
+                </div>
+                <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                    <div class="icon"><i class="icofont-settings"></i></div>
+                    <h4 class="title"><a href="">Nemo Enim</a></h4>
+                    <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                        praesentium voluptatum deleniti atque</p>
+                </div>
+                <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+                    <div class="icon"><i class="icofont-tasks-alt"></i></div>
+                    <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
+                    <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore,
+                        cum soluta nobis est eligendi</p>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End Services Section -->
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+    <div class="container">
+        <div class="copyright">
+
+        </div>
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
+            Designed by <a href="https://bootstrapmade.com/">Jorge Diaz</a>
+            <div class="text-gray" id="txt"></div>
+            <input id="hora" type="hidden">
+            <input id="mensaje" type="hidden">
+        </div>
+    </div>
+</footer><!-- End  Footer -->
+
+<div class="modal fade" id="modalVideo" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="videoTitulo"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static '/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+<script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+<script src="{% static 'vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'vendor/counterup/counterup.min.js' %}"></script>
+<script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'vendor/venobox/venobox.min.js' %}"></script>
+<script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'vendor/typed.js/typed.min.js' %}"></script>
+<script src="{% static 'vendor/aos/aos.js' %}"></script>
+
+
+<script src="{% static 'js/main.js' %}"></script>
+
+
+{{ namesala|json_script:"room-name" }}
+<script src="/static/channels/rec-ws.js"></script>
+<script>
+    const roomName = JSON.parse(document.getElementById('room-name').textContent);
+    const protocol = window.location.protocol.indexOf("https") > -1 ? "wss" : "ws";
+    const schemaChannel = `${protocol}://${window.location.host}/videos/${roomName}/`;
+    window.addEventListener('DOMContentLoaded', () => {
+    });
+
+
+    const chatSocket = new ReconnectingWebSocket(schemaChannel, null, {reconnectInterval: 1500});
+
+    chatSocket.onmessage = function (e) {
+        const data = JSON.parse(e.data);
+        if (data.status) {
+            $('#contenedorVideo').html('<div id="player1"></div>');
+            $('#nombreVideo').html(data.nombre)
+            selectVideo(data.idvideo)
+            $('#modal6').modal({keyboard: false, backdrop: 'static'}).modal("show");
+            console.log(data)
+        }
+    };
+
+    chatSocket.onopen = function (e) {
+        console.log('Chat socket is open');
+    };
+
+    chatSocket.onclose = function (e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+
+    function consultar() {
+        chatSocket.send(JSON.stringify({
+            'consultar': true,
+        }));
+    }
+
+    $(document).ready(function () {
+        setInterval(consultar, 1000);
+        {#$('#modal6').modal({keyboard: true, backdrop: 'static'}).modal("show");#}
+    });
+
+
+    function selectVideo(idvideo) {
+        player = new YT.Player('player1', {
+            height: "1000",
+            width: "100%",
+            playerVars: {
+                'autoplay': 1,
+                'controls': 0,
+                "showinfo": 0,
+                'autohide': 1,
+                "modestbranding": 0,
+                'loop': 1,
+                'wmode': 'opaque'
+            },
+            videoId: idvideo,
+            events: {
+                'onReady': function (event) {
+                    event.target.mute();
+                    event.target.setVolume(100);
+                    event.target.playVideo();
+                },
+                'onStateChange': function (event) {
+                    if (event.data === YT.PlayerState.PLAYING) {
+                        console.log('Video: Playing');
+                    }
+
+                    if (event.data === YT.PlayerState.PAUSED) {
+                        console.log('Video: Paused');
+                    }
+
+                    if (event.data === YT.PlayerState.ENDED) {
+                        console.log('Video: Ended');
+                        $('#player1').remove();
+                        $('#modal6').modal('hide');
+                    }
+                }
+            }
+        });
+    }
+
+
+</script>
+
+
+<script>
+    // 2. This code loads the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/player_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+
+
+</script>
+
+<link rel="stylesheet" href="/static/plyr/plyr.css">
+<script src="/static/plyr/plyr.js"></script>
+<script src="https://kit.fontawesome.com/a96c5b6f8d.js" crossorigin="anonymous"></script>
+
+<div class="modal fade justify-content-center" id="modal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+
+        <div class="modal-content justify-content-center" style="width: 100%; !important; background-color: #000 !important;">
+            <div id="contenedorVideo">
+                <div id="player1"></div>
+            </div>
+            <div class="d-grid gap-4 col-12 justify-content-center">
+                <div>
+                    <br/>
+                      <a onclick="player.unMute()" href="javascript:void(0);"><i class="fas fa-volume-down size:3x">  </i>  ACTIVAR SONIDO </a>
+                    <div>
+                    <br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
