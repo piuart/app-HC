@@ -19,6 +19,7 @@ from .youtubeapi import (
 class ListaReproduccion(models.Model):
     nombre = models.CharField(verbose_name="Nombre", max_length=500, blank=True, null=True)
     descripcion = models.TextField(verbose_name='Descripción', blank=True, null=True)
+    link_promo = models.URLField(null=True, blank=True, verbose_name="Promoción Url")
     idvideo = models.CharField(max_length=500, verbose_name='Id del Video')
     fecha_subida = models.DateField(blank=True, verbose_name='Fecha Ejecución', null=True)
     hora_subida = models.TimeField(blank=True, verbose_name='Hora Ejecución', null=True)

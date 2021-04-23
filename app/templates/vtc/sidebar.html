@@ -19,7 +19,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-header"><strong>Admiistración de:</strong></li>
                 <li class="nav-item">
-                    <a href="{% url 'youtube' %}" class="nav-link">
+                    <a href="{% url 'erp:listareproduccion_list' %}" class="nav-link">
                         <i class="fab fa-youtube"></i> MupiApp
                     </a>
                 </li>
@@ -47,13 +47,6 @@
                     <a href="{% url 'user:user_list' %}" class="nav-link">
                         <i class="fas fa-power-off"></i> Usuarios
                     </a>
-                </li>
-                <li>
-                    <a href="{% url 'erp:listareproduccion_list' %}" class="nav-link">
-                        <i class="fas fa-list-alt"></i> Lista Reproducción
-                    </a>
-                </li>
-                <li class="nav-item">
                 </li>
             </ul>
         </nav>

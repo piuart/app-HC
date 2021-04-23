@@ -19,15 +19,24 @@ $(function () {
             {"data": "fecha_subida"},
             {"data": "hora_subida"},
             {"data": "hora_subida"},
+            {"data": "link_promo"},
         ],
         columnDefs: [
+            {
+                targets: [-2],
+                class: 'text-center',
+                orderable: false,
+                render: function (data, type, row) {
+                    return '<a href="'+row.link_promo+'" target="_blank"><button type="button" class="btn-dark btn-sm">Promoción</button></a>'
+                }
+            },
             {
                 targets: [-1],
                 class: 'text-center',
                 orderable: false,
                 render: function (data, type, row) {
-                    var buttons = '<a href="/erp/listareproduccion/update/' + row.id + '/" class="btn btn-warning"><i class="fas fa-edit"></i></a> ';
-                    buttons += '<a href="/erp/listareproduccion/delete/' + row.id + '/" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>';
+                    var buttons = '<a href="/erp/listareproduccion/update/' + row.id + '/" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a> ';
+                    buttons += '<a href="/erp/listareproduccion/delete/' + row.id + '/" type="button" class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></a>';
                     return buttons;
                 }
             },

@@ -50,9 +50,9 @@
         <nav class="nav-menu">
             <ul>
                 <li class="#hero"><a href=""><i class=""></i><span>Inicio</span></a></li>
-                <li><a href="#about"><i class=""></i> <span>Sobre nosotros</span></a></li>
-                <li><a href="#resume"><i class=""></i> <span>Proyecto ErpTokio</span></a></li>
-                <li><a href="#portfolio"><i class=""></i> Codigo</a></li>
+                <li><a href="#about"><i class=""></i> <span>PixelApp</span></a></li>
+                <li><a href="#resume"><i class=""></i> <span>Módulos</span></a></li>
+                <li><a href="#portfolio"><i class=""></i> Distribución</a></li>
                 <li>{% if request.user.is_authenticated %}
                     <a href="{% url 'erp:dashboard' %}">
                         <i class="bx bx-user"></i> Bienvenido {{ request.user.username }}
@@ -61,7 +61,8 @@
                     <a href="{% url 'login' %}">
                         <i class="bx bx-door-open"></i> Login
                     </a>
-                {% endif %}</li>
+                {% endif %}
+                </li>
                 
 
 
@@ -89,7 +90,7 @@
             <div class="section-title">
                 <h2>Administra tu negocio de forma intuitiva</h2>
                 <p>Ofrecemos lo último en tecnología de gestión empresarial en una sola plataforma. Crea perfiles de
-                    usuarios,darle permisos en los grupos para efectuar diversas tareas.</p>
+                    usuarios, asignar permisos en grupos para efectuar diversas tareas sugún los permisos.</p>
             </div>
 
             <div class="row">
@@ -105,6 +106,9 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <ul>
+                                <li><i class="icofont-rounded-right"></i> <strong>Markeing y desarrollo:</strong> Potencia tu dispositivo 
+                                    interactuando de manera directa con tus clientes
+                                </li>
                                 <li><i class="icofont-rounded-right"></i> <strong>Stock:</strong> control de ventas y
                                     pedidos
                                 </li>
@@ -114,13 +118,13 @@
                                 <li><i class="icofont-rounded-right"></i> <strong>Almacén:</strong> Gráficas y acseso
                                     rápido a la data
                                 </li>
-                                <li><i class="icofont-rounded-right"></i> <strong>Gestor de productos:</strong> Listado
-                                    a tiempo real
-                                </li>
                             </ul>
                         </div>
                         <div class="col-lg-6">
                             <ul>
+                                <li><i class="icofont-rounded-right"></i> <strong>Gestor de productos:</strong> Listado
+                                    a tiempo real
+                                </li>
                                 <li><i class="icofont-rounded-right"></i> <strong>Chat</strong> comunicación activa</li>
                                 <li><i class="icofont-rounded-right"></i> <strong>Generador de facturas:</strong>
                                     Resumen de reportes
@@ -148,7 +152,7 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>Gestiona los recursos humanos</h2>
+                <h2>Gestión / resultados</h2>
                 <p>Crea y almacena los datos encenciales de tus trabajadores de cada area, clave, correo y nombre de
                     usuario</p>
             </div>
@@ -159,14 +163,14 @@
                     <div class="count-box">
                         <i class="icofont-simple-smile"></i>
                         <span data-toggle="counter-up">3000</span>
-                        <p><strong>Clientes</strong> felices</p>
+                        <p><strong>Más capacidad</strong> - respuesta</p>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
                     <div class="count-box">
                         <i class="icofont-document-folder"></i>
-                        <span data-toggle="counter-up">150</span>
+                        <span data-toggle="counter-up">4</span>
                         <p><strong>Modulos</strong> a medida</p>
                     </div>
                 </div>
@@ -271,75 +275,69 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>Resume</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                    fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <h2>Módulos</h2>
+                <p>Configurados para potenciar la administración de tu empresa, puedes crear categorias de productos, productos, clientes, 
+                   ventas y listado de usuarios</p>
             </div>
 
             <div class="row">
                 <div class="col-lg-6" data-aos="fade-up">
-                    <h3 class="resume-title">Sumary</h3>
+                    <h3 class="resume-title">Categorias</h3>
                     <div class="resume-item pb-0">
-                        <h4>Alex Smith</h4>
-                        <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and
-                            developing user-centered digital/print marketing material from initial concept to final,
-                            polished deliverable.</em></p>
+                        <h4>ALMACEN-PRODUCTOS</h4>
+                        <p><em>Módulo configurado para crear categorias de de productos 
+                               y organizar tu catalogo.</em></p>
                         <ul>
-                            <li>Portland par 127,Orlando, FL</li>
-                            <li>(123) 456-7891</li>
-                            <li>alice.barkley@example.com</li>
+                            <li>Crear / Eliminar</li>
+                            <li>Editar</li>
+                            <li>Breve descripción</li>
                         </ul>
                     </div>
 
-                    <h3 class="resume-title">Education</h3>
+                    <h3 class="resume-title">Almacén y Producto</h3>
                     <div class="resume-item">
-                        <h4>Master of Fine Arts &amp; Graphic Design</h4>
-                        <h5>2015 - 2016</h5>
-                        <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-                        <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero
-                            voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
+                        <h4>COTROL DE & STOCK</h4>
+                        <h5>Gráficas del almacén y ventas a tiempo real.</h5>
+                        <p><em>Controla la existencia de tus productos.</em></p>
+                        <p>Herramienta que permitirá a los encargados del almacén ver el comportamiento del stock de cada producto, facilitando 
+                           la reposición o inversión futura de productos estrella.</p>
                     </div>
                     <div class="resume-item">
-                        <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
-                        <h5>2010 - 2014</h5>
-                        <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-                        <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel
-                            ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur
-                            neque etlon sader mart dila</p>
+                        <h4>VENTAS & Y FACTURACIÓN</h4>
+                        <h5>Clientes y vendedores</h5>
+                        <p><em>Resumen de ventas, gráficas y detalle de la compra.</em></p>
+                        <p>Visión clara y detallada de las ventas que ocurren día a día, reportes y gráficas 
+                           del producto más vendido. Listado de clientes, generador automática de la factura.</p>
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="resume-title">Professional Experience</h3>
+                    <h3 class="resume-title">Usuarios</h3>
                     <div class="resume-item">
-                        <h4>Senior graphic design specialist</h4>
-                        <h5>2019 - Present</h5>
-                        <p><em>Experion, New York, NY </em></p>
+                        <h4>LISTADO DE TRABAJADORES</h4>
+                        <h5>Crear / Eliminar y Edita</h5>
+                        <p><em>Administra tu equipo e trabajo.</em></p>
                         <ul>
-                            <li>Lead in the design, development, and implementation of the graphic, layout, and
-                                production communication materials
+                            <li>Permite identificar de manera rápida y sencilla el número de 
+                                trabajadores y su responsabilidad en la empresa.
                             </li>
-                            <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of
-                                the project.
+                            <li>Permisos vinculados según el cargo ( grupos )
                             </li>
-                            <li>Supervise the assessment of all graphic materials in order to ensure quality and
-                                accuracy of the design
+                            <li>Foto de perfil, cambio de contraseña.
                             </li>
-                            <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000
+                            <li>Datos de contacto del equipo.
                             </li>
                         </ul>
                     </div>
                     <div class="resume-item">
-                        <h4>Graphic design specialist</h4>
-                        <h5>2017 - 2018</h5>
-                        <p><em>Stepping Stone Advertising, New York, NY</em></p>
+                        <h4>SOPORTE TÉCNICO</h4>
+                        <h5>Master</h5>
+                        <p><em>Perfil y permisos generales.</em></p>
                         <ul>
-                            <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and
-                                advertisements).
+                            <li>Encargado de la administración del sistema, recuperación de datos
                             </li>
-                            <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-                            <li>Recommended and consulted with clients on the most appropriate graphic design</li>
-                            <li>Created 4+ design presentations and proposals a month for clients and account managers
+                            <li>Permisos generales</li>
+                            <li>Permisos para entrar al área de administrador general y otorgar, permisos , eliminar personas o editar información de productos y crear grupos de trabajos relacionados.</li>
+                            <li>Crear y eliminar registros. Visión genarl del proyecto.
                             </li>
                         </ul>
                     </div>
@@ -354,10 +352,8 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>Portfolio</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                    fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <h2>Distribución</h2>
+                <p>Nuestro Sistema PixelApp esta hecho en Python, si.. un lenguaje poco conocido, pero muy potente y que grandes empresas usan para potenciar sus ideas o negocios.</p>
             </div>
 
             <div class="row" data-aos="fade-up">
@@ -365,8 +361,8 @@
                     <ul id="portfolio-flters">
                         <li data-filter="*" class="filter-active">All</li>
                         <li data-filter=".filter-app">App</li>
-                        <li data-filter=".filter-card">Card</li>
-                        <li data-filter=".filter-web">Web</li>
+                        <li data-filter=".filter-card">Módulos</li>
+                        <li data-filter=".filter-web">Template</li>
                     </ul>
                 </div>
             </div>
@@ -482,48 +478,42 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>Services</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                    fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <h2>Más servicios y actualizaciones.</h2>
+                <p>Nuestra visión como empresa es ofrecerte la mejor tecnología y poder siempre escalar tus proyectos, crecer y potenciar tu producción. Por ello puedes añadir:</p>
             </div>
 
             <div class="row">
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"><i class="icofont-computer"></i></div>
-                    <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi
-                        sint occaecati cupiditate non provident</p>
+                    <h4 class="title"><a href="">Actualizacion y personalización del diseño.</a></h4>
+                    <p class="description">El código y su funcionalidad son esenciales, pero la usabilidad y un ambiente ameno es la combinación perfecta.</p>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                     <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
-                    <h4 class="title"><a href="">Dolor Sitema</a></h4>
-                    <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat tarad limino ata</p>
+                    <h4 class="title"><a href="">Nuevos Módulos</a></h4>
+                    <p class="description">Puedes escalar tu proyecto añadiendo nuevos módulos. Puedes elegir entre los desarrollados 
+                        o pedir uno a medida, nuestro equipo estará encantado de atender tu solicitud.a</p>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                     <div class="icon"><i class="icofont-earth"></i></div>
-                    <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                    <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                        eu fugiat nulla pariatur</p>
+                    <h4 class="title"><a href="">Fusión</a></h4>
+                    <p class="description">Si tu empresa vende productos online, puedes vincularla y añadir nuestro modulo TokioEcommerce... ¡y a producir!.</p>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                     <div class="icon"><i class="icofont-image"></i></div>
-                    <h4 class="title"><a href="">Magni Dolores</a></h4>
-                    <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum</p>
+                    <h4 class="title"><a href="">Web Inicio</a></h4>
+                    <p class="description">Si aun no tienes una web, al comprar nuestro ErpTokio. Puedes activarla comunicándote con soporte | cuentas de manera gratuita con 5 secciones.</p>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                     <div class="icon"><i class="icofont-settings"></i></div>
-                    <h4 class="title"><a href="">Nemo Enim</a></h4>
-                    <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                        praesentium voluptatum deleniti atque</p>
+                    <h4 class="title"><a href="">Soporte y mantenimiento</a></h4>
+                    <p class="description">Toda información y data debe ser debidamente procesada, nuestro sistema guarda tus 
+                        datos o la información de tu ErpTokio de manera segura en nuestros servidores.</p>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
                     <div class="icon"><i class="icofont-tasks-alt"></i></div>
-                    <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-                    <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore,
-                        cum soluta nobis est eligendi</p>
+                    <h4 class="title"><a href="">Marketing - Desarrollo</a></h4>
+                    <p class="description">Módulos o ideas para implementar en tu dispositivo para potenciar la interacción de tus clientes.</p>
                 </div>
             </div>
 
@@ -543,7 +533,7 @@
             <!-- You can delete the links only if you purchased the pro version. -->
             <!-- Licensing information: https://bootstrapmade.com/license/ -->
             <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
-            Designed by <a href="https://bootstrapmade.com/">Jorge Diaz</a>
+            Designed by <a href="https://pixelnetwork.es/">PixelApp</a>
             <div class="text-gray" id="txt"></div>
             <input id="hora" type="hidden">
             <input id="mensaje" type="hidden">
@@ -601,7 +591,9 @@
         const data = JSON.parse(e.data);
         if (data.status) {
             $('#contenedorVideo').html('<div id="player1"></div>');
-            $('#nombreVideo').html(data.nombre)
+            $('#nombreVideo').html(data.nombre);
+            console.log(data);
+            $('#linkVideo').html("<a href='"+data.link_promo+"'>Click Promoción</a>");
             selectVideo(data.idvideo)
             $('#modal6').modal({keyboard: false, backdrop: 'static'}).modal("show");
             console.log(data)
@@ -630,7 +622,7 @@
 
     function selectVideo(idvideo) {
         player = new YT.Player('player1', {
-            height: "1000",
+            height: "1200",
             width: "100%",
             playerVars: {
                 'autoplay': 1,
@@ -687,6 +679,7 @@
 <script src="/static/plyr/plyr.js"></script>
 <script src="https://kit.fontawesome.com/a96c5b6f8d.js" crossorigin="anonymous"></script>
 
+
 <div class="modal fade justify-content-center" id="modal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 
@@ -697,10 +690,18 @@
             <div class="d-grid gap-4 col-12 justify-content-center">
                 <div>
                     <br/>
-                      <a onclick="player.unMute()" href="javascript:void(0);"><i class="fas fa-volume-down size:3x">  </i>  ACTIVAR SONIDO </a>
+                    <div class="container">
+                        <div class="row">
+                          <div class="col-sm-5 col-md-6">
+                            <!-- <h2 class="mr-4"><i class="fa"></i><b id="nombreVideo">Video Nombre!</b></h2>-->
+                            <div><a onclick="player.unMute()" href="javascript:void(0);"><i class="fas fa-volume-down size:3x">  </i> Activar Sonido </a></div>
+                          </div>
+                          <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                            <div class="mr-4 text-right"><i class="fa"></i><b id="linkVideo">Video Nombre!</b></div>
+                          </div>
+                        </div> 
                     <div>
                     <br/>
-                    </div>
                 </div>
             </div>
         </div>

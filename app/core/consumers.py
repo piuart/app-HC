@@ -49,6 +49,7 @@ class ChatConsumer(AsyncWebsocketConsumer, LoginRequiredMixin):
                     video.save()
                     data['status'] = True
                     data['nombre'] = video.nombre
+                    data['link_promo'] = video.link_promo
                     data['idvideo'] = video.idvideo
                     data["hora"] = datetime.now().time().strftime("%H:%M")
                 else:
